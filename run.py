@@ -15,7 +15,7 @@ if __name__ == '__main__':
         num = int(argv[1])
         path = gen_path(num)
         subprocess.run(['rm', 'a.out'])
-        subprocess.run(['g++', path])
+        subprocess.run(['g++', '-std=c++11', path])
         subprocess.run('./a.out')
     except (IndexError, ValueError):
         print('Usage: run num (num is positive)')
